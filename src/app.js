@@ -2,8 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const { uuid } = require("uuidv4");
 
-// const { uuid } = require("uuidv4");
-
 const app = express();
 
 app.use(express.json());
@@ -72,7 +70,7 @@ app.post("/repositories/:id/like", (request, response) => {
   if (!repository){
     return response.status(400).send("Repository not found!");
   }
-  
+
   repository.likes++;
 
   return response.json(repository);
